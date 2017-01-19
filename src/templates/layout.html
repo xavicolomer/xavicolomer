@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+
+        {% block meta_social %}
+            <meta name="description" content="Welcome to Xavi Colomer's Website" />
+            <meta name="keywords" content="mobile app,app,web,webdev,flash,javascript,php,development,dataviz,mobile first,html5,webgl,animation" />
+
+            <meta name="author" content="@xaviercolomer" />
+            <meta name="copyright" content="" />
+            <meta name="application-name" content="" />
+
+            <meta property="og:title" content="Welcome to Xavi Colomer's Website" />
+            <meta property="og:type" content="article" />
+            <meta property="og:image" content="{{STATIC_URL}}/me.jpg" />
+            <meta property="og:url" content="{{STATIC_URL}}" />
+            <meta property="og:description" content="My name is Xavi Colomer, I'm an Entrepreneur, Creative & Developer. I create Digital Experiences" />
+
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:title" content="Welcome to Xavi Colomer's Website" />
+            <meta name="twitter:description" content="My name is Xavi Colomer, I'm an Entrepreneur, Creative & Developer. I create Digital Experiences" />
+            <meta name="twitter:image" content="{{STATIC_URL}}/me.jpg" />
+        {% endblock %}
+
+        <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-6085227-14', 'auto');
+              ga('send', 'pageview');
+        </script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="{{ STATIC_URL }}/{{ stylesFile }}">
+        <title>{% block title %}Xavi Colomer's Website {% endblock %}</title>
+    </head>
+    <body class="{% block body_class %}{% endblock %}">
+        {% block content %} {% endblock %}
+        <script src="{{ STATIC_URL }}/{{ scriptsFile }}"></script>
+        <script id="signature">
+        for(var styles={blue:"background-color: #2fb0e6; color: #2fb0e6;","clear-blue":"background-color: #aae4f7; color: #aae4f7;",white:"background-color: white; color: white;",text:"background-color: white; color: #2fb0e6;"},drawing=[[" ","blue",17],["\n","text"],[" ","blue",2],[" ","clear-blue",2],[" ","blue",9],[" ","white",2],[" ","blue",2],["\n","text"],[" ","blue",4],[" ","clear-blue",2],[" ","blue",5],[" ","white",2],[" ","blue",4],["   So, digging into my code huh? :)","text"],["\n","text"],[" ","blue",6],[" ","clear-blue",2],[" ","blue"],[" ","white",2],[" ","blue",6],["\n","text"],[" ","blue",6],[" ","white",2],[" ","blue"],[" ","clear-blue",2],[" ","blue",6],["   Remember, the 'X' always marks the right spot ;)","text"],["\n","text"],[" ","blue",4],[" ","white",2],[" ","blue",5],[" ","clear-blue",2],[" ","blue",4],["\n","text"],[" ","blue",2],[" ","white",2],[" ","blue",9],[" ","clear-blue",2],[" ","blue",2],["\n","text"],[" ","blue",17]],text="",log=[],i=0,len=drawing.length;len>i;++i){drawing[i].length<3&&(drawing[i][2]=1),text+="%c";for(var j=0,len2=drawing[i][2];len2>j;++j)text+=drawing[i][0];log.push(styles[drawing[i][1]])}log.unshift(text),console.log.apply(this,log);var elem=document.getElementById("signature");elem.parentNode.removeChild(elem);
+    </script>
+    </body>
+</html>
+

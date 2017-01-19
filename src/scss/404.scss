@@ -1,0 +1,33 @@
+.error-content {
+    font-family: 'Helvetica', sans-serif;
+
+    &__logo {
+        width: 100px;
+        margin: 10px;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    &__content {
+        text-align: center;
+        max-width: 50%;
+    }
+
+    &__title {
+        margin-top: 30px;
+        font-size: 30px;
+        margin: 10px;
+        font-weight: bold;
+    }
+
+    &__description {
+        opacity: 0.5;
+        font-family: 'Helvetica', sans-serif;
+        font-weight: 100;
+    }
+}

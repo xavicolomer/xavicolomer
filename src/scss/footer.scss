@@ -1,0 +1,11 @@
+.main-footer {
+    height: 60px;
+    background: $sc-13;
+
+    &__legal {
+        text-align: center;
+        font-size: 13px;
+        padding-top: 20px;
+        color: #5a5a5a;
+    }
+}

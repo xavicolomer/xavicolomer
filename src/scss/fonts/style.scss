@@ -1,0 +1,223 @@
+@import "variables";
+
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('#{$icomoon-font-path}/icomoon.ttf?sgya18') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?sgya18') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?sgya18#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up;
+  }
+}
+.icon-block {
+  &:before {
+    content: $icon-block;
+  }
+}
+.icon-clip {
+  &:before {
+    content: $icon-clip;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-cloud {
+  &:before {
+    content: $icon-cloud;
+  }
+}
+.icon-download-B {
+  &:before {
+    content: $icon-download-B;
+  }
+}
+.icon-email {
+  &:before {
+    content: $icon-email;
+  }
+}
+.icon-flag-B {
+  &:before {
+    content: $icon-flag-B;
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart;
+  }
+}
+.icon-mailbox {
+  &:before {
+    content: $icon-mailbox;
+  }
+}
+.icon-message {
+  &:before {
+    content: $icon-message;
+  }
+}
+.icon-movie {
+  &:before {
+    content: $icon-movie;
+  }
+}
+.icon-music {
+  &:before {
+    content: $icon-music;
+  }
+}
+.icon-pause {
+  &:before {
+    content: $icon-pause;
+  }
+}
+.icon-resize-A {
+  &:before {
+    content: $icon-resize-A;
+  }
+}
+.icon-settings-B {
+  &:before {
+    content: $icon-settings-B;
+  }
+}
+.icon-share {
+  &:before {
+    content: $icon-share;
+  }
+}
+.icon-shield {
+  &:before {
+    content: $icon-shield;
+  }
+}
+.icon-sign {
+  &:before {
+    content: $icon-sign;
+  }
+}
+.icon-speaker-off {
+  &:before {
+    content: $icon-speaker-off;
+  }
+}
+.icon-speaker-on {
+  &:before {
+    content: $icon-speaker-on;
+  }
+}
+.icon-star {
+  &:before {
+    content: $icon-star;
+  }
+}
+.icon-stats-A {
+  &:before {
+    content: $icon-stats-A;
+  }
+}
+.icon-trash {
+  &:before {
+    content: $icon-trash;
+  }
+}
+.icon-play3 {
+  &:before {
+    content: $icon-play3;
+  }
+}
+.icon-pause2 {
+  &:before {
+    content: $icon-pause2;
+  }
+}
+.icon-stop2 {
+  &:before {
+    content: $icon-stop2;
+  }
+}
+.icon-google-drive {
+  &:before {
+    content: $icon-google-drive;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-dribbble {
+  &:before {
+    content: $icon-dribbble;
+  }
+}
+.icon-behance {
+  &:before {
+    content: $icon-behance;
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github;
+  }
+}
+.icon-skype {
+  &:before {
+    content: $icon-skype;
+  }
+}
+.icon-linkedin2 {
+  &:before {
+    content: $icon-linkedin2;
+  }
+}
+

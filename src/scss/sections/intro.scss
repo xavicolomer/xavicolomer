@@ -1,0 +1,41 @@
+.intro {
+    line-height: 30px;
+    font-size: 6vw;
+    font-weight: bold;
+    display: flex;
+ 
+    @include breakpoint($xs) {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    @include breakpoint($md) {
+        font-size: 60px; 
+        line-height: 70px;
+    }
+
+    @include breakpoint($md) {
+        font-size: 80px;
+        line-height: 100px;
+    }
+
+    .text-highlighted {
+        color: $pc-1;
+    }
+
+    &.main-section {
+        padding: 0;
+    }
+
+    p + p {
+        margin-top: 20px;
+
+        @include breakpoint($xs) {
+            margin-top: 30px;
+        }
+
+        @include breakpoint($md) {
+            margin-top: 50px;
+        }
+    }
+}

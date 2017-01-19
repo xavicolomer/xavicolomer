@@ -1,0 +1,32 @@
+.about {
+    background: $pc-1;
+
+    .row {
+        padding-top: 40px;
+    }
+
+    .component-text {
+        font-family: 'Helvetica';
+        font-weight: 300;
+        font-size: 16px;
+        padding-top: 30px;
+        padding-left: 0;
+        padding-right: 0;
+        line-height: 22px;
+        color: rgba(white, 0.8);
+        margin: 0;
+
+        @include breakpoint($md) {
+            padding-right: 50px;
+        }
+    }
+
+    &-picture {
+        width: 100%;
+        padding-top: 30px;
+
+        &-wrapper {
+            padding: 0;
+        }
+    }
+}

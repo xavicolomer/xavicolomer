@@ -1,0 +1,7 @@
+{% macro create(network='', text='') %}
+    <a class="project-header__social-button-link" href="{{text}}" target="_blank">
+        <div class="project-header__social-button project-header__social-button-{{network}}">
+            <span class="icon icon-{{network}}"></span>
+        </div>
+    </a>
+{% endmacro %}

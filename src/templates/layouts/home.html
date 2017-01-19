@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="app">
+    {% include "partials/menu.html" %}
+    <section class="intro main-section">
+        <div class="wrap section-content middle-xs row">
+            <a href="#hello">
+                <div class="">
+                    <h2><p>Hola!</p>
+                    <p>My name is Xavi Colomer, I'm an Entrepreneur, Creative & Developer.</p>
+                    <p>I create <span class="text-highlighted">Digital Experiences</span></p></h2>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="portfolio main-section">
+        <div class="wrap section-content">
+            <div class="main-section__title">
+                <h2 class="main-section__title-headline">
+                    <a href="#portfolio">portfolio</a>
+                </h2>
+                <div class="main-section__title-subheadline">
+                    featured projects
+                </div>
+            </div>
+            <div class="media-gallery row component">
+                {% for project in featured %}
+                    <div class="media-gallery__item col-xs-12 col-sm-6 col-lg-4">
+                        <a href="/projects/{{project.id}}/{{project.slug}}">
+                            <img class="media-gallery__item-thumbnail" src="{{STATIC_URL}}{{project.src}}" alt="{{project.alt}}" />
+                            <h3 class="media-gallery__item-title">{{project.title}}</h3>
+                            <div class="media-gallery__item-description">{{project.subtitle}}</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="skills main-section">
+        <div class="wrap section-content">
+            <div class="main-section__title">
+                <h2 class="main-section__title-headline">
+                    <a href="#skills">skills</a>
+                </h2>
+                <div class="main-section__title-subheadline">
+                    Each bar represents 10 years or more
+                </div>
+            </div>
+            <div class="skills-category__items-wrapper row">
+            {% for category, items in skillsByCategory %}
+                <div class="skills-category__items-block col-xs-12 col-md-4">
+                    <h4 class="skills-category__title">{{category}}</h4>
+                    <ul class="skills-category__items">
+                        {% for key in items %}
+                            {% set skill = skills[key] %}
+                            <li class="skills-category__item">
+                                <div class="skills-category__item-name">
+                                    {{skill.name}}
+                                    <span class="skills-category__item-experience">(+{{skill.experience}} years)</span>
+                                </div>
+                                <div class="skills-category__item-bar">
+                                    <div class="skills-category__item-value skills-category__item-value-{{key}}" style="width:{{skill.experience * 10}}%"></div>
+                                </div>
+                                <div class="skills-category__item-description">{{skill.description}}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section class="about main-section main-section--is-dark">
+        <div class="wrap section-content">
+            <div class="main-section__title">
+                <h2 class="main-section__title-headline">
+                    <a href="#about">about me</a>
+                </h2>
+                <div class="main-section__title-subheadline">
+                    ask me about loom :)
+                </div>
+            </div>
+        </div>
+        <div class="wrap section-content row">
+            <div class="component-text col-xs-12 col-sm-8">
+                <p>Creative, Developer & Entrepreneur.</p>
+                <p>I am passionate about Technology, Science and Sci-Fi since I can remember. I would define myself as a curious mind, always tinkering and trying to reach the limits of the technology I currently have in front of me. I enjoy working on dynamic projects, with state of the art UI / UX and cutting edge technologies.</p>
+                <br/>
+                <br/>
+                <p>Proud Founder</p>
+                <ul>
+                <li>Barcelona Developers Conference</li>
+                <li>Barcelona BITS (Barcelona International Technology Show)</li>
+                </ul>
+                <br/>
+                <p><i>(Both projects discontinued because I couldn't dedicate more time)</i></p>
+                <br/>
+                <br/>
+                <p>Curious Facts</p>
+                <ul>
+                <li>I was born the same year Times magazine made a computer man of year (1982)</li>
+                <li>I see faces everywhere</li>
+                </ul>
+            </div>
+            <div class="about-picture-wrapper col-xs-12 col-sm-4 ">
+                <img class="about-picture" src="{{STATIC_URL}}/images/me.jpg" alt="me" />
+            </div>
+        </div>
+    </section>
+    <section class="contact main-section main-section--is-dark">
+        <div class="wrap section-content">
+            <div class="main-section__title">
+                <h2 class="main-section__title-headline">
+                    <a href="#contact">contact</a>
+                </h2>
+                <div class="main-section__title-subheadline">
+                    let's work together!
+                </div>
+            </div>
+        </div>
+        <div class="wrap section-content row">
+            <div class="contact-column contact-form col-xs-12 col-md-6">
+                <div class="contact-column__text">
+                    You can reach me by email, I will contact you back in approx 3-4 business days
+                </div>
+                <input type="text" class="contact-form__field contact-form__email" placeholder="your@email.com"/>
+                <textarea class="contact-form__field contact-form__text" placeholder="Interesting offer, comment or just say hi ;)"></textarea>
+                <button class="contact-form__button contact-form__button--disabled col-xs-12 col-md-3">send</button>
+            </div>
+            <div class="contact-column contact-social col-xs-12 col-md-6">
+                <div class="contact-column__text">
+                    Also, you can find me in the following social networks!
+                </div>
+                <ul class="contact-social__items">
+                    {% for network in networks %}
+                        <li class="contact-social__item">
+                            <a href="{{network.link}}" target="_blank">
+                                <span class="icon icon-{{network.id}}"></span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer middle-xs">
+        <div class="main-footer__legal">{{footer}}</div>
+    </footer>
+</div>
+
+{% endblock %}

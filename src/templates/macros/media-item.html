@@ -1,0 +1,10 @@
+{% macro create(media={}, STATIC_URL='', group='') %}
+    <div class="media-wrapper {% if media.video %}media-wrapper--with-video{% endif %}" data-init="media-zoom" {% if group %}data-zoom-group="{{group}}"{% endif %}>
+        {% if media.video %}
+            <video class="media-wrapper__video" preload="none">
+                <source src="{{STATIC_URL}}{{media.video}}" type="video/mp4">
+            </video>
+        {% endif %}
+        <img class="media-wrapper__image" src="{{STATIC_URL}}{{media.src}}" draggable="false" alt="{{media.alt}}" title="{{media.title}}"/>
+    </div>
+{% endmacro %}

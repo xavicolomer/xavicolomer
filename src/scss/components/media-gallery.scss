@@ -1,0 +1,136 @@
+.media-gallery {
+    &__item {
+        padding: 0;
+        opacity: 1;
+        cursor: pointer;
+        outline: 1px solid rgba($sc-0, 0.1);
+        padding: 8px;
+        margin-top: 30px;
+        cursor: pointer;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        @include breakpoint($sm) {
+            margin-top: 0;
+            min-height: 380px;
+        }
+
+        @include breakpoint($md) {
+            margin-bottom: -2px;
+            padding: 10px;
+
+            &:hover {
+                opacity: 0.8;
+
+                .media-gallery__item-title {
+                    color: $pc-1;
+                }
+            }
+        }
+
+        &-thumbnail {
+            width: 100%;
+            cursor: pointer;
+
+            @include breakpoint($md) {
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &-title {
+            font-size: 18px;
+            margin-top: 6px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+        &-description {
+            font-family: 'Helvetica', sans-serif;
+            margin-top: 6px;
+            line-height: 22px;
+            color: #a5a5a5;
+        }
+    }
+
+    .row {
+        margin: 0;
+    }
+}
+
+.media-wrapper {
+    .media-gallery & {
+        @include breakpoint($md) {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        z-index: 102;
+        position: relative;
+        display: block;
+    }
+
+    &--with-video  {
+        &:after {
+            content: $icon-play3;
+            font-family: 'icomoon';
+            display: inline-block;
+            font-size: 52px;
+            color: white;
+            position: absolute;
+            z-index: 103;
+            top: calc(50% - 52px);
+            left: calc(50% - 52px);
+            width: 70px;
+            height: 74px;
+            border: 6px solid white;
+            border-radius: 93px;
+            padding-left: 26px;
+            padding-top: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0.5;
+
+            @include breakpoint($md) {
+                font-size: 64px;
+                top: calc(50% - 73px);
+                left: calc(50% - 73px);
+                width: 100px;
+                height: 100px;
+                padding-left: 40px;
+                padding-top: 40px;
+            }
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &--is-playing {
+        &:after {
+            display: none;
+        }
+
+        .media-wrapper__image {
+            pointer-events: none;
+        }
+    }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        z-index: 101;
+        width: 100%;
+    }
+
+    &[data-init="media-zoom"] {
+        cursor: pointer;
+        position: relative;
+    }
+}
+

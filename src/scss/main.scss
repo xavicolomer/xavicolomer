@@ -1,0 +1,162 @@
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: $sc-12;
+}
+
+.body--is-dark {
+    background: $sc-12;
+}
+
+.body--no-scroll {
+    overflow: hidden;
+}
+
+.body--animated {
+    transition: transform 0.5s ease;
+    -webkit-transition: transform 0.5s ease;
+}
+
+.wrap {
+    box-sizing: border-box;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include breakpoint($lg) {
+        padding: 0;
+    }
+}
+
+.component {
+    margin-top: 40px;
+    clear: both;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &-title {
+        text-transform: uppercase;
+        padding: 0 25px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    &-subtitle {
+        text-transform: uppercase;
+        color: $sc-12;
+    }
+}
+
+.main-section {
+    min-height: 95vh;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @include breakpoint($md) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    @include breakpoint($lg) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__title {
+        &-headline {
+            color: $sc-12;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            @include breakpoint($sm) {
+                font-size: 40px;
+            }
+
+            @include breakpoint($md) {
+                font-size: 50px;
+            }
+
+            .main-section--is-dark & {
+                color: $sc-0;
+            }
+        }
+
+        &-subheadline {
+            color: $sc-12;
+            font-size: 12px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            padding-top: 10px;
+
+            @include breakpoint($sm) {
+                font-size: 16px;
+            }
+
+            @include breakpoint($md) {
+                font-size: 20px;
+            }
+
+            .main-section--is-dark & {
+                color: $sc-0;
+            }
+        }
+    }
+}
+
+.zoom-container,
+.media-gallery {
+    .slider {
+        &-button {
+            background: rgba($sc-12, 1);
+            width: 50px;
+            height: 50px;
+            color: rgba($sc-0, 0.8);
+            font-family: 'icomoon' !important;
+            text-align: center;
+            padding-top: 16px;
+            box-sizing: border-box;
+            cursor: pointer;
+            top: calc(50% - 50px);
+
+            &:hover {
+                background: rgba($sc-12, 0.8);
+            }
+
+            &::after {
+                content: $icon-arrow-left;
+            }
+
+            &-right {
+                right: 0;
+
+                &::after {
+                    content: $icon-arrow-right;
+                }
+            }
+        }
+
+        &-nav {
+
+            &-wrapper {
+                margin-top: 10px;
+            }
+
+            &-bullet {
+                &--selected {
+                    background: $pc-1;
+                }
+            }
+        }
+    }
+}
+
+.is-hidden {
+    display: none;
+}
+
+.is-invisible {
+    opacity: 0;
+}

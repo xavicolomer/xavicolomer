@@ -1,0 +1,123 @@
+.skills {
+    &.main-section {
+        padding-bottom: 70px;
+    }
+
+    &-category {
+
+        &__title {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 60px;
+        }
+
+        &__item {
+            &-name {
+                color: #585858;
+                margin-top: 25px;
+                font-weight: 100;
+                font-family: 'Helvetica', sans-serif;
+                text-transform: capitalize;
+            }
+
+            &-experience {
+                opacity: 0.5;
+            }
+
+            &-description {
+                margin-top: 10px;
+                font-size: 16px;
+                line-height: 20px;
+                color: #585858;
+                opacity: 0.5;
+                font-family: 'Helvetica', sans-serif;
+                font-weight: 100;
+            }
+
+            &-bar {
+                width: 100%;
+                height: 4px;
+                background: #efefef;
+                margin-top: 10px;
+            }
+
+            &-value {
+                width: 50%;
+                height: 4px;
+                background: #666;
+
+                &-js {
+                    background: #e4d226;
+                }
+
+                &-as {
+                    background: #e80f0f;
+                }
+
+                &-php {
+                    background: #7f57d6;
+                }
+
+                &-python {
+                    background: #6385bf;
+                }
+
+                &-c-sharp {
+                    background: #b056ca;
+                }
+
+                &-photoshop {
+                    background: #4e5caf;
+                }
+
+                &-illustrator {
+                    background: #f3aa17;
+                }
+
+                &-flash {
+                    background: #fd421d;
+                }
+
+                &-creativity {
+                    background: #67c58f;
+                }
+
+                &-leadership {
+                    background: #41CDF7;
+                }
+
+                &-3d {
+                    background: #15c1ae;
+                }
+            }
+        }
+
+        &__items {
+
+            &-block {
+                @include breakpoint($md) {
+                    padding-right: 20px;
+                    padding-left: 20px;
+
+                    &:first-child {
+                        padding-left: 0;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            &-wrapper {
+                margin-top: 0;
+
+                @include breakpoint($md) {
+                    margin-top: 30px;
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

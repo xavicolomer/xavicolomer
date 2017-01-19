@@ -1,0 +1,269 @@
+$header-height: 450px;
+
+.project {
+    height: 100%;
+    width: 100%;
+
+    .wrap {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include breakpoint($md) {
+            padding-left: inherit;
+            padding-right: inherit;
+        }
+    }
+
+    .menu .section-content {
+        @include breakpoint($md) {
+            height: 80px;
+        }
+    }
+
+    &-header {
+        height: inherit;
+        position: relative;
+
+        @include breakpoint($md) {
+            height: $header-height;
+        }
+
+        &__background {
+            width: 100%;
+            display: none;
+            filter: blur(12px);
+            -webkit-filter: blur(12px);
+            position: absolute;
+            top: -10vw;
+            width: 120vw;
+            left: -10vw;
+
+            @include breakpoint($md) {
+                display: block;
+            }
+
+            &-wrapper {
+                width: 100vw;
+                overflow: hidden;
+                height: $header-height;
+                position: absolute;
+            }
+        }
+
+        &__gradient {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: linear-gradient(to bottom, rgba($sc-12, 0) 0%,rgba($sc-12, 0.5) 100%);
+        }
+
+        &__title {
+            background: white;
+            padding: 25px;
+            padding-bottom: 40px;
+            vertical-align: bottom;
+            bottom: 0;
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            left: 0;
+            right: 0;
+
+            @include breakpoint($md) {
+                position: absolute;
+            }
+        }
+
+        &__date {
+            color: $pc-1;
+            padding-top: 10px;
+
+            @include breakpoint($md) {
+                padding-top: 15px;
+            }
+        }
+
+        &__headline {
+            padding: 0 25px;
+            padding-top: 60px;
+
+            @include breakpoint($md) {
+                padding-top: 0;
+            }
+        }
+
+        &__name {
+            font-size: 35px;
+            font-weight: bold;
+            width: inherit;
+            line-height: 42px;
+
+            @include breakpoint($md) {
+                width: 70%;
+            }
+        }
+
+        &__buttons {
+            display: none;
+
+            @include breakpoint($md) {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: auto;
+                left: auto;
+            }
+        }
+
+        &__social-button,
+        &__action-button {
+            width: 60px;
+            height: 60px;
+            display: block;
+            float: left;
+            background: $sc-5;
+            color: $sc-0;
+            cursor: pointer;
+            font-size: 20px;
+            cursor: pointer;
+            border-left: 1px solid rgba(white, 0.5);
+            font-size: 25px;
+            padding: 17px;
+            box-sizing: border-box;
+
+            &:first-child {
+                border-left: none;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &-link {
+                border-left: 1px solid rgba(212, 212, 212, 0.9);
+                display: block;
+                float: left;
+            }
+        }
+
+        &__action-button-demo {
+            display: none;
+            background: $pc-1;
+            width: auto;
+            text-transform: uppercase;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 15px;
+            font-family: 'Montserrat';
+
+            @include breakpoint($md) {
+                display: block;
+            }
+        }
+    }
+
+    &-column {
+        padding: 0;
+        padding-top: 60px;
+
+        &:first-child {
+            padding-top: 0px;
+        }
+
+        @include breakpoint($md) {
+            padding-top: 0px;
+        }
+    }
+
+    &-content {
+        background: $sc-0;
+        margin-bottom: 0px;
+        padding-bottom: 100px;
+
+        @include breakpoint($sm) {
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint($md) {
+            margin-bottom: 80px;
+        }
+    }
+
+    &-menu {
+        padding: 0 25px;
+
+        @include breakpoint($md) {
+            padding: 0;
+            border-bottom: none;
+            background: none;
+            position: absolute;
+        }
+
+        .wrap {
+            @include breakpoint($md) {
+                padding: 25px;
+            }
+        }
+    }
+
+    .project-section {
+        margin-top: 60px;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .media-gallery {
+        background: $sc-1;
+
+        &__item {
+            padding: 0;
+            min-height: inherit;
+
+            @include breakpoint($sm) {
+                padding: 8px;
+            }
+        }
+
+        &__items {
+            @include breakpoint($sm) {
+                padding: 16px;
+            }
+        }
+
+        .component-title {
+            padding-top: 25px;
+            padding-bottom: 35px;
+        }
+
+        padding-bottom: 20px;
+    }
+
+    .skills-category__items-block {
+        padding-right: 25px;
+        padding-left: 25px;
+
+        &:last-child {
+            padding-right: 25px;
+        }
+    }
+
+    .related {
+        &-item {
+            color: $pc-1;
+            margin-top: 25px;
+            line-height: 22px;
+        }
+
+        &-items {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+
+}

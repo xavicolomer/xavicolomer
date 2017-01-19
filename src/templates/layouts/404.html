@@ -1,0 +1,14 @@
+<!-- index.html -->
+{% extends "layout.html" %}
+{% block content %}
+<div class="error-content__wrapper">
+    <div class="error-content__content">
+        <a href="/">
+            <image class="error-content__logo" src="{{STATIC_URL}}/images/logo.jpg"></image>
+        </a>
+        <div class="error-content__title">404</div>
+        <div class="error-content__description">Oooppps... the content you are looking for does not exist or has been deleted.</div>
+    </div>
+</div>
+
+{% endblock %}

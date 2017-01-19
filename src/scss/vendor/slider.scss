@@ -1,0 +1,97 @@
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &-paginator {
+        margin: 0 auto;
+        height: 20px;
+        width: 50px;
+        color: #ccc;
+        margin-top: 10px;
+
+        @include breakpoint($sm) {
+            margin-top: 0;
+            color: #505050;
+        }
+
+        &-index {
+            display: block;
+            float: left;
+            color: $pc-1;
+            margin-right: 5px;
+
+            @include breakpoint($sm) {
+                color: $sc-0;
+            }
+        }
+    }
+
+    &-button {
+        position: absolute;
+        top: 0;
+
+        &::after {
+            content: '<';
+        }
+
+        &-right {
+            right: 0;
+
+            &::after {
+                content: '>';
+            }
+        }
+    }
+
+    &-track {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+
+        &--animated {
+            transition: transform 0.5s ease;
+        }
+    }
+
+    &-slide {
+        max-width: 100vw;
+        float: left;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-nav {
+        width: 100%;
+        height: 30px;
+        clear: both;
+
+        &-wrapper {
+            height: 10px;
+            display: table;
+            margin: 6px auto;
+        }
+
+        &-bullet {
+            width: 10px;
+            height: 10px;
+            background: #c1c1c1;
+            border-radius: 20px;
+            float: left;
+            margin-left: 5px;
+            cursor: pointer;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &--selected {
+                background: cyan;
+            }
+        }
+    }
+}

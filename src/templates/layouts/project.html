@@ -1,0 +1,113 @@
+<!-- index.html -->
+{% extends "layout.html" %}
+{% import 'macros/media-item.html' as media %}
+{% import 'macros/social-button.html' as social %}
+
+{% block body_class %}body--is-dark{% endblock %}
+
+{% block meta_social %}
+    <!-- for Google -->
+    <meta name="description" content="{{project.title}}" />
+    <meta name="keywords" content="mobile app,app,web,webdev,flash,javascript,php,development,dataviz,mobile first,html5,webgl,animation" />
+
+    <meta name="author" content="@xaviercolomer" />
+    <meta name="copyright" content="" />
+    <meta name="application-name" content="" />
+
+    <!-- for Facebook -->
+    <meta property="og:title" content="{{project.title}}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{STATIC_URL}}{{project.src}}" />
+    <meta property="og:url" content="{{STATIC_URL}}{{project.link}}" />
+    <meta property="og:description" content="{{project.description}}" />
+
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{project.title}}" />
+    <meta name="twitter:description" content="{{project.description}}" />
+    <meta name="twitter:image" content="{{STATIC_URL}}{{project.src}}" />
+{% endblock %}
+
+{% block content %}
+    <div class="project">
+        {% include "partials/back.html" %}
+        <header class="project-header">
+            <div class="project-header__background-wrapper">
+                <img class="project-header__background" src="{{STATIC_URL}}{{project.src}}" alt="{{project.subtitle}}"/>
+            </div>
+            <div class="project-header__gradient"></div>
+            <div class="project-header__title wrap section-content">
+                <div class="project-header__headline">
+                    <h2 class="project-header__name">{{project.title}}</h2>
+                    <h6 class="project-header__date">{{created}}</h6>
+                </div>
+                <div class="project-header__buttons">
+                    {{social.create(network='twitter', text='https://twitter.com/intent/tweet?text=' + project.title + '&url=' + STATIC_URL + '/' + project.id + '/' + project.slug + '&via=xaviercolomer')}}
+                    {{social.create(network='facebook', text='https://www.facebook.com/sharer.php?t=' + profile.title + '&u=' + STATIC_URL + '/' + project.id + '/' + project.slug)}}
+                    {{social.create(network='email', text='mailto:some@friend.com?subject=Check out: ' + project.title + '&body=' + project.subtitle + '%20' + STATIC_URL + '/' + project.id + '/' + project.slug)}}
+                    {% if project.demo %}
+                        <button class="project-header__action-button project-header__action-button-demo"
+                                data-init="demo"
+                                data-init-options='{
+                                    "isMobileReady": false,
+                                    "url": "{{DEMO_URL}}{{project.demo}}"
+                                }'>launch demo</button>
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section class="project-info">
+            <div class="wrap section-content project-content">
+                {{project.content | safe }}
+                <section class="project-section component media-gallery">
+                    <h2 class="component-title">media gallery</h2>
+                    <div class="media-gallery__items row component" data-init="media-gallery">
+                        {% for mediaItem in project.gallery %}
+                            <div class="media-gallery__item col-xs-12 col-sm-4">
+                                {{media.create(media=mediaItem, STATIC_URL=STATIC_URL, group="media-gallery")}}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                <section class="project-section row">
+                    <div class="project-column col-xs-12 col-md-6">
+                        <h2 class="component-title">skills</h2>
+                        <div class="skills-category__items-block col-xs-12">
+                            <ul class="skills-category__items">
+                                {% for key in projectSkills %}
+                                {% set skill = skills[key] %}
+                                    <li class="skills-category__item">
+                                        <div class="skills-category__item-name">
+                                            {{skill.name}}
+                                            <span class="skills-category__item-experience">(+{{skill.experience}} years)</span>
+                                        </div>
+                                        <div class="skills-category__item-bar">
+                                            <div class="skills-category__item-value skills-category__item-value-{{key}}" style="width:{{skill.experience * 10}}%"></div>
+                                        </div>
+                                        <div class="skills-category__item-description">{{skill.description}}</div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-column col-xs-12 col-md-6">
+                        <h2 class="component-title">related projects</h2>
+                        <ul class="related-items">
+                            {% if relatedProjects %}
+                                {% for project in relatedProjects %}
+                                <li class="related-item">
+                                    <a class="related-link" href="/projects/{{project.id}}/{{project.slug}}">{{project.title}}</a>
+                                </li>
+                                {% endfor %}
+                            {% else %}
+                                <li class="related-item">
+                                    No Related Projects.
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </div>
+{% endblock %}
